@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>REGISTRATION FORM</title>
+	<style type="text/css">
+		select,textarea,input[type=text]{
+			width: 100%;
+			padding: 10px 20px;
+			margin: 6px 0;
+			box-sizing: border-box;
+		}
+		button{
+			width: 50%;
+			padding: 7px 15px;
+			margin: 5px 0;
+			box-sizing: border-box;
+			border-radius: 7px;
+			cursor: pointer;
+		}
+		button:hover{
+			background-color: SpringGreen;
+		}
+		input:hover{
+			border-color: blue;
+		}
+		textarea:hover{
+			border-color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		function validate(){
+			var f = document.registration.firstname.value;
+			if(f.length==0){
+				alert("Please fill your First Name");
+			 	return false;
+			 }
+			 var m = document.registration.middlename.value;
+			 if(m.length==0){
+				alert("Please fill your Middle Name");
+			 	return false;
+			 }
+			var l = document.registration.lastname.value;
+			 if(l.length==0){
+				alert("Please fill your Last Name");
+			 	return false;
+			 }
+			var genderinfo = document.getElementsByName("gender");
+			var gendervalidate=0;
+			 for(i=0;i<genderinfo.length;i++){
+			 	if(genderinfo[i].checked){
+			 		gendervalidate++;
+			 	}
+			 }
+			if(gendervalidate==0){
+			 	alert("Please select your gender");
+			 	return false;
+			 }
+			var dateofbirth = document.getElementsByName("dob");
+			if(dateofbirth.length==null){
+				alert("Please provide your date of birth");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	
+	<form name="registration" align="center" bgcolor="red" onsubmit="return validate()">
+		<table border="2" align="center" bordercolor=" OldLace" bgcolor=" OldLace"><!-- bordercolor="white" -->
+			<thead>
+				<tr>
+					<td border="3" align="center" bgcolor="LightCoral" colspan="2">
+						<h2>Student Registration form</h2>
+					</td>
+				</tr>
+				
+			</thead>
+			<tbody>
+				<tr>
+					<td align="left" colspan="2">
+						<h3>Student Name</h3>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="text" name="firstname" id="firstname" placeholder="First Name">
+				<input type="text" name="middlename" id="middlename" placeholder="Middle Name">
+				<input type="text" name="lastname" id="lastname" placeholder="Last Name">
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<h3>Birth Date</h3>
+					</td>
+					<td align="left">
+						<h3>Gender</h3>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<input type="date" name="dob" id="dob">
+					</td>
+					<td align="left">
+						<input type="radio" name="gender" value="male">Male
+						<input type="radio" name="gender" value="female">Female
+						<input type="radio" name="gender" value="others">Others
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<h3>Hobbies</h3>
+					</td>
+					<td align="left">
+						<h3>E-mail</h3>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" rowspan="3">
+						<input type="checkbox" name="hobbies" value="reading">Reading<br>
+						<input type="checkbox" name="hobbies" value="writing">Writing<br>
+						<input type="checkbox" name="hobbies" value="playing">Playing<br>						
+						<input type="checkbox" name="hobbies" value="swimming">Swimming<br>
+						<input type="checkbox" name="hobbies" value="dancing">Dancing<br>
+						<input type="checkbox" name="hobbies" value="drawing">Drawing<br>
+						<input type="checkbox" name="hobbies" value="cooking">Cooking<br>
+					</td>
+					<td>
+						<input type="text" name="email" id="email" placeholder="Ex: xyz@gmail.com" align="top">
+					</td>
+					
+				</tr>
+				<tr>
+					<td align="left">
+						<h3>Contact</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="contact" id="contact" placeholder="Ex: 9999999999">
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<h3>Address</h3>
+					</td>
+				</tr>
+				<tr>					
+					<td align="left">
+						<input type="text" name="locality" id="locality" placeholder="locality / street" width="100%">
+					</td>
+					<td>
+						<input type="text" name="area" id="area" placeholder="City / Town / Village">
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><h3>State</h3></td>
+					<td align="left"><h3>Pin code</h3></td>
+				</tr>
+				<tr>
+					<td>
+						<select name="state" id="state">
+							<option value="AP">Andhra Pradesh</option>
+							<option value="ArP">Arunachal Pradesh </option>
+							<option value="A">Assam</option>
+							<option value="B">Bihar</option>
+							<option value="C">Chattisgarh</option>
+							<option value="G">Goa </option>
+							<option value="Gu">Gujarat </option>
+							<option value="H">Haryana</option>
+							<option value="HP">Himachal Pradesh</option>
+							<option value="J">Jharkhand</option>
+							<option value="Kn">Karnataka</option>
+							<option value="K">Kerala</option>
+							<option value="MP">Madhya Pradesh</option>
+							<option value="M">Maharashtra</option>
+							<option value="Mn">Manipur</option>
+							<option value="Me">Meghalaya</option>
+							<option value="Mi">Mizoram</option>
+							<option value="N">Nagaland</option>
+							<option value="O">Odisha</option>
+							<option value="P">Punjab</option>
+							<option value="R">Rajasthan</option>
+							<option value="S">Sikkim</option>
+							<option value="T">Tamil Nadu</option>
+							<option value="TN">Telangana</option>
+							<option value="Tr">Tripura</option>
+							<option value="UP">Uttar Pradesh</option>
+							<option value="UK">Uttarakhand</option>
+							<option value="WB">West Bengal</option>
+					</td>
+					<td>
+						<input type="text" name="pin" id="pin" placeholder="Ex: 522002">
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><h3>Additional info</h3></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea name="additional" id="additional" rows="6"></textarea>		
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button align="center">SUBMIT</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>
+
